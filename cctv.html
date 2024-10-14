@@ -1,0 +1,185 @@
+<!-- Tambahkan link Google Fonts di bagian head -->
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap">
+    <style>
+      /* Gaya CSS untuk perataan teks dan font */
+      body {
+        font-family: 'Ubuntu', sans-serif;
+      }
+  
+      #cctv-panel {
+        text-align: center; /* Semua konten di dalam panel CCTV di tengah */
+      }
+  
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #007bff; /* Sesuaikan dengan warna yang diinginkan */
+      }
+  
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+  
+      label {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+  
+      select.form-select {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        font-family: 'Ubuntu', sans-serif;
+      }
+  
+      video, img {
+        display: block;
+        margin: 20px auto; /* Memastikan video dan gambar berada di tengah */
+        border-radius: 8px;
+      }
+  
+      /* Tambahkan efek hover untuk tampilan lebih menarik */
+      select.form-select:hover {
+        border-color: #007bff;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+      }
+    </style>
+  </head>
+  
+  <!-- content -->
+  <div id="cctv-panel">
+    <div class="container px-4 pb-5 text-primary">
+      <h2>CCTV KOTA JEPARA</h2>
+      <p>Pantauan CCTV di <b>16</b> Titik Strategis Di Kabupaten Jepara</p>
+      <div class="row">
+        <div class="col-12 col-lg-10 col-xl-9 mx-auto">
+          <div class="row my-2 align-items-center">
+            <div class="col-12">
+              <label for="pilih-cctv">Pilih CCTV</label>
+            </div>
+            <div class="col-12">
+              <select 
+                class="form-select" 
+                id="pilih-cctv" 
+                onchange="startPlay(this.value)"
+              >
+              <option value="https://cctv-jepara.lifemedia.id/live/depanmpplogo.m3u8">
+                Masjid Agung                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/masjidagunglogo.m3u8">
+                Masjid Agung 2                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/simpangdprdlogo.m3u8">
+                Simpang DPRD                </option>
+                            <option value="https://cctv-stream.jepara.go.id:8083/1b933fca712018a084ce492f4d66e106/hls/OXe3INbqCR/e9gvZAePQm/s.m3u8">
+                Jalan Pemuda                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/rbra1logo.m3u8">
+                RBRA 1                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/rbra2logo.m3u8">
+                RBRA 2                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/rbra3logo.m3u8">
+                RBRA 3                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/rbra4logo.m3u8">
+                RBRA 4                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/rbra5logo.m3u8">
+                RBRA 5                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/scjkaliwisologo.m3u8">
+                Perempatan SCJ Kali Wiso                </option>
+                            <option value="https://cctv-stream.jepara.go.id:8083/1b933fca712018a084ce492f4d66e106/hls/OXe3INbqCR/5CkdYrHs37/s.m3u8">
+                Jalan Kartini                </option>
+                            <option value="https://cctv-stream.jepara.go.id:8083/1b933fca712018a084ce492f4d66e106/hls/OXe3INbqCR/L2hYQ6tP1B/s.m3u8">
+                Jalan HOS Cokroaminoto                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/tugupkklogo.m3u8">
+                Perempatan Tugu PKK                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/simpangtamankeranglogo.m3u8">
+                Simpang Taman Kerang                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/alunalun2logo.m3u8">
+                Alun-alun 2                </option>
+                            <option value="https://cctv-jepara.lifemedia.id/live/kamaljunaidilogo.m3u8">
+                Stadion Kamal Junaidi (Gate)                </option>
+                <!-- Tambahkan pilihan CCTV lainnya sesuai kebutuhan -->
+              </select>
+            </div>
+          </div>
+          <video 
+            class="rounded-3" 
+            id="cctvPlayerHLS" 
+            autoplay 
+            muted 
+            style="width: 100%;"
+            ondblclick="fullscreen(this)"
+          ></video>
+          <img 
+            class="rounded-3" 
+            id="media-alert" 
+            src=""
+            style="width: 100%;"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+    const cctvPlayerHLS = document.getElementById('cctvPlayerHLS');
+    document.addEventListener('DOMContentLoaded', () => {
+      startPlay();
+    });
+  
+    function startPlay(
+      currentUrl = "https://cctv-jepara.lifemedia.id/live/rbra2logo.m3u8"  ) {
+      const mediaAlert = document.getElementById('media-alert');
+      if (currentUrl == "https://cctv-jepara.lifemedia.id/live/rbra2logo.m3u8") {
+        document.getElementById('pilih-cctv').value = currentUrl;
+      }
+  
+      if (cctvPlayerHLS.canPlayType('application/vnd.apple.mpegurl')) {
+        cctvPlayerHLS.src = currentUrl;
+      } else if (Hls.isSupported()) {
+        let hls = new Hls({
+          manifestLoadingTimeOut: 60000
+        });
+        cctvPlayerHLS.style.display = 'block';
+        mediaAlert.style.display = 'none';
+        mediaAlert.src = '';
+        hls.loadSource(currentUrl);
+        hls.attachMedia(cctvPlayerHLS);
+        hls.on(Hls.Events.ERROR, function (event, data) {
+          if (data.fatal) {
+            switch (data.type) {
+              case Hls.ErrorTypes.NETWORK_ERROR:
+                cctvPlayerHLS.style.display = 'none';
+                mediaAlert.style.display = 'block';
+                mediaAlert.src = 'https://placehold.co/1280x720.png?text=Kamera+Offline';
+                break;
+              default:
+                hls.destroy();
+                break;
+            }
+          }
+        });
+      } else {
+        cctvPlayerHLS.src = 'https://via.placeholder.com/1280x720.png?text=Browser+Not+Supported';
+      }
+    }
+  
+    function fullscreen(elem) {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) {
+        /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) {
+        /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+    }
+  </script>
+  <!-- end content -->
+<center>
+  <p class="text-center mb-4">Powered By <b>CemasKauDek</b> &copy; 2024</p></center>
+  
