@@ -95,7 +95,7 @@ input[type="submit"]:hover {
 }
 
 .error-message {
-    color: #ff0000;
+    color: #000000;
     margin-bottom: 1rem;
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     font-weight: 300;
