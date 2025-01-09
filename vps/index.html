@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://j.top4top.io/p_32965s7za1.png">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>❗VPS JavaStore❗</title>
+    <meta name="description" content="JavaStore Menyediakan VPS Murah Dan Berkualitas" />
+    <meta property="og:image" content="https://javastore.my.id/img/vps.jpg">
+    <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f39c12;
+            --background-color: #f0f4f8;
+            --text-color: #333;
+            --card-bg-color: #fff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: var(--card-bg-color);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .vps-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .vps-item {
+            background: var(--background-color);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .vps-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .vps-item h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .vps-item p {
+            margin: 5px 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .button {
+            padding: 12px 25px;
+            font-size: 16px;
+            color: #fff;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .button:hover {
+            background-color: #3a7bd5;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .floating-icon {
+            position: fixed;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .floating-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp {
+            right: 20px;
+            background-color: #25D366;
+        }
+
+        .telegram {
+            left: 20px;
+            background-color: #0088cc;
+        }
+
+        .floating-icon i {
+            color: white;
+            font-size: 28px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .vps-list {
+                grid-template-columns: 1fr;
+            }
+
+            .button-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
+
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .dark-mode-toggle:hover {
+            background: var(--secondary-color);
+        }
+
+        body.dark-mode {
+            --background-color: #1a1a2e;
+            --text-color: #ffffff;
+            --card-bg-color: #16213e;
+        }
+
+        body.dark-mode .vps-item {
+            background: #0f3460;
+        }
+        
+        .card {
+            background: var(--card-bg-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+        .info-section {
+            margin-top: 40px;
+            padding: 20px;
+            background: #e7f3fe;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 5px;
+            color: #034078;
+        }
+
+        .info-section h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .info-section ul, .info-section ol {
+            padding-left: 20px;
+        }
+
+        body.dark-mode .info-section {
+            background: #1e3a8a;
+            color: #ffffff;
+        }
+        .vps-info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e7f3fe;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 5px;
+            color: #034078;
+        }
+
+        .vps-info h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .vps-info ul {
+            padding-left: 20px;
+        }
+
+        body.dark-mode .vps-info {
+            background: #1e3a8a;
+            color: #ffffff;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+
+            .vps-list {
+                grid-template-columns: 1fr;
+            }
+
+            .button-container {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>❗️JavaStore VPS❗️</h1>
+
+        <h2>💎Regular CPU💎</h2>
+        <div class="vps-list">
+            <div class="vps-item">
+                <h3>4 GB / 2 CPUs</h3>
+                <p>80 GB SSD Disk</p>
+                <p>4 TB transfer</p>
+                <p class="price">Rp. 55k / $4</p>
+            </div>
+            <div class="vps-item">
+                <h3>8 GB / 4 CPUs</h3>
+                <p>160 GB SSD Disk</p>
+                <p>5 TB transfer</p>
+                <p class="price">Rp. 75k / $7</p>
+            </div>
+            <div class="vps-item">
+                <h3>16 GB / 4 CPUs</h3>
+                <p>200 GB NVMe SSD</p>
+                <p>8 TB transfer</p>
+                <p class="price">Rp. 210k / $22</p>
+            </div>
+            <div class="vps-item">
+                <h3>16 GB / 8 CPUs</h3>
+                <p>320 GB NVMe SSD</p>
+                <p>12 TB transfer</p>
+                <p class="price">Rp. 410k / $30</p>
+            </div>
+        </div>
+
+        <div class="vps-info">
+            <h3>⚙️Informasi VPS Regular</h3>
+            <ul>
+                <li><strong>Card Pembelian:</strong> Full Garansi 15 Hari, 2x Replace Per IP</li>
+                <li><strong>Any Request:</strong> Bisa request Region, OS, dan Version</li>
+                <li><strong>Region:</strong> New York, Singapura, London, Amsterdam, Prancis, Toronto, San Francisco, Bangalore, Sydney</li>
+                <li><strong>OS Supported:</strong> Ubuntu, Debian</li>
+                <li><strong>Keunggulan:</strong> Harga terjangkau, Kecepatan Port 30GB/s, Kecepatan DATA 3GB/s - 10GB/s</li>
+                <li><strong>Terms of Service:</strong> Ada Di Card Pembelian</li>
+            </ul>
+        </div>
+        <h2>💎Premium CPU💎</h2>
+        <div class="vps-list">
+            <div class="vps-item">
+                <h3>4 GB / 2 AMD CPUs</h3>
+                <p>80 GB NVMe SSD</p>
+                <p>4 TB transfer</p>
+                <p class="price">Rp. 85k / $8</p>
+            </div>
+            <div class="vps-item">
+                <h3>4 GB / 2 INTEL CPUs</h3>
+                <p>120 GB NVMe SSD</p>
+                <p>4 TB transfer</p>
+                <p class="price">Rp. 95k / $9</p>
+            </div>
+            <div class="vps-item">
+                <h3>8 GB / 4 AMD CPUs</h3>
+                <p>160 GB NVMe SSD</p>
+                <p>5 TB transfer</p>
+                <p class="price">Rp. 135k / $15</p>
+            </div>
+            <div class="vps-item">
+                <h3>8 GB / 4 INTEL CPUs</h3>
+                <p>240 GB NVMe SSD</p>
+                <p>6 TB transfer</p>
+                <p class="price">Rp. 235k / $24</p>
+            </div>
+        </div>
+        <div class="vps-info">
+            <h3>⚙️Informasi VPS Premium</h3>
+            <ul>
+                <li><strong>Card Pembelian:</strong> Full Garansi 25 Hari, 2x Replace Per IP</li>
+                <li><strong>Any Request:</strong> Bisa request Region, OS, dan Version</li>
+                <li><strong>Region:</strong> New York, Singapura, London, Amsterdam, Prancis, Toronto, San Francisco, Bangalore, Sydney</li>
+                <li><strong>OS Supported:</strong> Ubuntu, Debian</li>
+                <li><strong>Keunggulan:</strong> Premium CPU lebih awet, tidak mudah replace, performa multitasking, harga terjangkau, penggunaan tenaga yang efisien, kompatibilitas dengan teknologi baru, kecepatan port 50GB/s, Kecepatan DATA 3GB/s - 10GB/s</li>
+                <li><strong>Terms of Service:</strong> Ada Di Card Pembelian</li>
+            </ul>
+        </div>
+        <div class="info-section">
+            <h3>✨Kenapa Harus Pilih Java Store VPS?</h3>
+            <p>Kami menawarkan performa tinggi, keamanan maksimal, dan dukungan 24/7. Dengan infrastruktur canggih dan harga kompetitif, JavaStore VPS adalah pilihan tepat untuk kebutuhan hosting Anda.</p>
+        </div>
+
+        <div class="info-section">
+            <h3>🛍Cara Pemesanan :</h3>
+            <ol>
+                <li>Pilih paket VPS yang sesuai dengan kebutuhan Anda</li>
+                <li>Klik tombol "Pesan Sekarang" Untuk menghubungi penjual</li>
+                <li>Isi formulir sesuai pemesananmu dan lakukan pembayaran</li>
+                <li>VPS Anda akan dibuat dalam waktu 5-10 menit setelah pembayaran dikonfirmasi</li>
+            </ol>
+        </div>  <div class="button-container">
+            <a href="https://javastore.my.id/pay" class="button">🛒Pesan Sekarang</a>
+            <a href="https://t.me/JavaPrem" class="button">🧾Testimoni</a>
+            <a href="https://t.me/JavaPremBot" class="button">🤖Bot Telegram</a>
+        </div>
+    </div>
+
+    <div class="floating-icon whatsapp" onclick="window.location.href='https://wa.me/6288215393438';">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <div class="floating-icon telegram" onclick="window.location.href='https://t.me/javaprem';">
+        <i class="fab fa-telegram-plane"></i>
+    </div>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const darkModeToggle = document.querySelector('.dark-mode-toggle i');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                darkModeToggle.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+    </script>
+</body>
+</html>
